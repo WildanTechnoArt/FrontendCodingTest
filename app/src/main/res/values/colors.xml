@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#D62F2F</color>
+    <color name="colorSecondary">#D62F2F</color>
+    <color name="colorButton">#F6FFDC</color>
+    <color name="colorButtonBorder">#115A45</color>
+    <color name="colorOnSecondaryContainer">#0060EF</color>
+    <color name="colorAccent">#D62F2F</color>
+    <color name="colorSecondaryButton">#D62F2F</color>
+    <color name="colorBackground">#F3F5FB</color>
+    <color name="colorStatusBar">#000000</color>
+    <color name="colorForm">#1A2C50CB</color>
+    <color name="colorSurface">#ff1c1b1f</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorPrivacy">#1947BA</color>
+    <color name="colorSecondary2Button">#E9F4FF</color>
+    <color name="blackTransparent">#80000000</color>
+    <color name="colorActive">#11860E</color>
+    <color name="colorTextSecondary">#80000000</color>
+    <color name="whiteTransparent">#99FFFFFF</color>
+    <color name="whiteTransparent90">#E6FFFFFF</color>
+    <color name="shadow">#33000000</color>
+    <color name="colorRateBar">#FFD700</color>
+</resources>

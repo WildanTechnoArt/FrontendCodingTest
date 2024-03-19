@@ -1,0 +1,16 @@
+<resources>
+    <dimen name="main_margin">20dp</dimen>
+    <dimen name="item_margin">10dp</dimen>
+    <dimen name="item_margin2">12dp</dimen>
+    <dimen name="btn_padding">14dp</dimen>
+    <dimen name="secondary_margin">16dp</dimen>
+    <dimen name="card_elevation">1dp</dimen>
+    <dimen name="card_rounded">10dp</dimen>
+    <dimen name="item_text_size">13sp</dimen>
+    <dimen name="text_label">16sp</dimen>
+    <dimen name="img_backdrop_height">220dp</dimen>
+    <dimen name="field_corner">10dp</dimen>
+    <dimen name="item_space">6dp</dimen>
+    <dimen name="padding_top_form">17dp</dimen>
+    <dimen name="btn_corner">24dp</dimen>
+</resources>

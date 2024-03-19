@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress NavigationFile -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation_graph"
+    app:startDestination="@id/checklistFragment">
+
+    <fragment
+        android:id="@+id/checklistFragment"
+        android:name="com.wildantechnoart.frontendcodingtes.view.ChecklistFragment"
+        android:label="@string/label_fragment_checklist"
+        tools:layout="@layout/fragment_checklist" >
+        <action
+            android:id="@+id/action_checklistFragment_to_addChecklistFragment"
+            app:destination="@id/addChecklistFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addChecklistFragment"
+        android:name="com.wildantechnoart.frontendcodingtes.view.AddFragment"
+        android:label="@string/label_fragment_add"
+        tools:layout="@layout/fragment_add" >
+    </fragment>
+</navigation>

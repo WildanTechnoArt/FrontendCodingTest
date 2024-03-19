@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">FrontendCodingTes</string>
+    <string name="request_none_data">.................</string>
+    <string name="message_if_disconnect">Not Connected to the Internet</string>
+    <string name="message_if_error">An error occurred, please try again</string>
+    <string name="message_if_not_data">No data</string>
+    <string name="host_nav_main">navigation</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_fragment_login">Login</string>
+    <string name="label_fragment_register">Register</string>
+    <string name="label_fragment_checklist">Checklist Items</string>
+    <string name="hint_username">Username</string>
+    <string name="action_login">Login</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="action_register">Register Now</string>
+    <string name="label_or">OR</string>
+    <string name="text_not_have_account">Don\'t have an account?</string>
+    <string name="message_if_wrong_pass">Password must not be less than 8 digits</string>
+    <string name="message_if_data_empty">There cannot be empty data</string>
+    <string name="message_if_email_invalid">Email invalid</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_add">Add Item</string>
+    <string name="hint_write">Tulis Nama Item</string>
+    <string name="label_fragment_add">Create Checklist</string>
+</resources>

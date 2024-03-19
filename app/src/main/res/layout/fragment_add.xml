@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/main_margin"
+    android:orientation="vertical"
+    tools:context=".view.AddFragment">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_write"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_write"
+        app:boxCornerRadiusBottomEnd="@dimen/field_corner"
+        app:boxCornerRadiusBottomStart="@dimen/field_corner"
+        app:boxCornerRadiusTopEnd="@dimen/field_corner"
+        app:boxCornerRadiusTopStart="@dimen/field_corner"
+        app:boxStrokeColor="@color/blackTransparent"
+        app:boxStrokeWidth="1dp"
+        app:boxStrokeWidthFocused="1dp"
+        app:endIconTint="@color/colorTextSecondary"
+        tools:layout_editor_absoluteX="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_outline_write"
+            android:drawablePadding="8dp"
+            android:inputType="text"
+            android:paddingTop="@dimen/padding_top_form"
+            android:paddingBottom="@dimen/padding_top_form" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAddItem"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/main_margin"
+        android:padding="@dimen/btn_padding"
+        android:textAllCaps="false"
+        android:text="@string/action_add"
+        app:cornerRadius="@dimen/btn_corner" />
+
+</LinearLayout>
