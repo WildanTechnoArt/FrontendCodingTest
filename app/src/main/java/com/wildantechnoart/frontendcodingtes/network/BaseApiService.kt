@@ -1,7 +1,7 @@
 package com.wildantechnoart.frontendcodingtes.network
 
 import com.wildantechnoart.frontendcodingtes.model.AddChecklistBody
-import com.wildantechnoart.frontendcodingtes.model.ItemsResponse
+import com.wildantechnoart.frontendcodingtes.model.ChecklistResponse
 import com.wildantechnoart.frontendcodingtes.model.LoginBody
 import com.wildantechnoart.frontendcodingtes.model.LoginResponse
 import com.wildantechnoart.frontendcodingtes.model.RegisterBody
@@ -13,7 +13,6 @@ import retrofit2.http.Header
 import retrofit2.http.Headers
 import retrofit2.http.POST
 import retrofit2.http.Path
-import retrofit2.http.Query
 
 interface BaseApiService {
 
@@ -34,7 +33,7 @@ interface BaseApiService {
     @GET("checklist")
     suspend fun getChecklist(
         @Header("Authorization") token: String?
-    ): ItemsResponse
+    ): ChecklistResponse
 
     @Headers("Accept: application/json")
     @POST("checklist")

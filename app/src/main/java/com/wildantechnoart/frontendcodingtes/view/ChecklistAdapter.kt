@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.wildantechnoart.frontendcodingtes.R
 import com.wildantechnoart.frontendcodingtes.databinding.ItemChecklistBinding
-import com.wildantechnoart.frontendcodingtes.model.ItemData
+import com.wildantechnoart.frontendcodingtes.model.ChecklistData
 
-class ChecklistAdapter : ListAdapter<ItemData, ChecklistAdapter.Holder>(MyDiffCallback()) {
+class ChecklistAdapter : ListAdapter<ChecklistData, ChecklistAdapter.Holder>(MyDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val binding =
@@ -23,12 +23,12 @@ class ChecklistAdapter : ListAdapter<ItemData, ChecklistAdapter.Holder>(MyDiffCa
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: Holder, position: Int) {
         val data = getItem(position)
-        val context = holder.itemView.context
 
         with(holder.binding) {
+            val isComplete = data.checklistCompletionStatus ?: false
+
             textName.text = data.name ?: "-"
-            textItem.text = data.items ?: context.getString(R.string.label_total_item)
-            checkItem.isChecked = data.checklistCompletionStatus ?: false
+            checkItem.isChecked = isComplete
             btnMenus.setOnClickListener {
                 val popupMenu = PopupMenu(it.context, it)
                 popupMenu.setOnMenuItemClickListener(object :
@@ -50,18 +50,18 @@ class ChecklistAdapter : ListAdapter<ItemData, ChecklistAdapter.Holder>(MyDiffCa
         }
     }
 
-    var onClick: ((ItemData) -> Unit)? = null
+    var onClick: ((ChecklistData) -> Unit)? = null
 
     override fun getItemCount(): Int {
         return currentList.size
     }
 
-    class MyDiffCallback : DiffUtil.ItemCallback<ItemData>() {
-        override fun areItemsTheSame(oldItem: ItemData, newItem: ItemData): Boolean {
+    class MyDiffCallback : DiffUtil.ItemCallback<ChecklistData>() {
+        override fun areItemsTheSame(oldItem: ChecklistData, newItem: ChecklistData): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: ItemData, newItem: ItemData): Boolean {
+        override fun areContentsTheSame(oldItem: ChecklistData, newItem: ChecklistData): Boolean {
             return oldItem == newItem
         }
     }

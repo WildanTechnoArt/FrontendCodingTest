@@ -1,14 +1,13 @@
 package com.wildantechnoart.frontendcodingtes.viewmodel
 
 import android.content.Context
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.wildantechnoart.frontendcodingtes.MyApp
 import com.wildantechnoart.frontendcodingtes.model.AddChecklistBody
-import com.wildantechnoart.frontendcodingtes.model.ItemData
+import com.wildantechnoart.frontendcodingtes.model.ChecklistData
 import com.wildantechnoart.frontendcodingtes.model.Response
 import com.wildantechnoart.frontendcodingtes.network.RetrofitClient
 import com.wildantechnoart.frontendcodingtes.repository.ChecklistRepository
@@ -24,8 +23,8 @@ class ChecklistViewModel : ViewModel() {
 
     private val repository: ChecklistRepository by lazy { ChecklistRepository(RetrofitClient.instance) }
 
-    private val _getChecklist = MutableLiveData<List<ItemData>>()
-    val getChecklist: LiveData<List<ItemData>> = _getChecklist
+    private val _getChecklist = MutableLiveData<List<ChecklistData>>()
+    val getChecklist: LiveData<List<ChecklistData>> = _getChecklist
 
     private val _successDelete = MutableLiveData<Response>()
     val successDelete: LiveData<Response> = _successDelete
