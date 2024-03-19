@@ -13,7 +13,7 @@
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_write"
+        android:hint="@string/hint_input_checklist"
         app:boxCornerRadiusBottomEnd="@dimen/field_corner"
         app:boxCornerRadiusBottomStart="@dimen/field_corner"
         app:boxCornerRadiusTopEnd="@dimen/field_corner"
@@ -44,7 +44,7 @@
         android:layout_marginTop="@dimen/main_margin"
         android:padding="@dimen/btn_padding"
         android:textAllCaps="false"
-        android:text="@string/action_add"
+        android:text="@string/action_add_checklist"
         app:cornerRadius="@dimen/btn_corner" />
 
 </LinearLayout>

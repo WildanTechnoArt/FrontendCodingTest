@@ -2,6 +2,8 @@ package com.wildantechnoart.frontendcodingtes.network
 
 import com.wildantechnoart.frontendcodingtes.model.AddChecklistBody
 import com.wildantechnoart.frontendcodingtes.model.ChecklistResponse
+import com.wildantechnoart.frontendcodingtes.model.ItemBody
+import com.wildantechnoart.frontendcodingtes.model.ItemResponse
 import com.wildantechnoart.frontendcodingtes.model.LoginBody
 import com.wildantechnoart.frontendcodingtes.model.LoginResponse
 import com.wildantechnoart.frontendcodingtes.model.RegisterBody
@@ -12,6 +14,7 @@ import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Headers
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Path
 
 interface BaseApiService {
@@ -47,5 +50,45 @@ interface BaseApiService {
     suspend fun deleteChecklist(
         @Header("Authorization") token: String?,
         @Path("id") id: String?
+    ): Response
+
+    @Headers("Accept: application/json")
+    @GET("checklist/{checklistId}/item")
+    suspend fun getItems(
+        @Header("Authorization") token: String?,
+        @Path("checklistId") checklistId: String?
+    ): ItemResponse
+
+    @Headers("Accept: application/json")
+    @POST("checklist/{checklistId}/item")
+    suspend fun postItems(
+        @Header("Authorization") token: String?,
+        @Path("checklistId") checklistId: String?,
+        @Body body: ItemBody
+    ): Response
+
+    @Headers("Accept: application/json")
+    @DELETE("checklist/{checklistId}/item/{itemId}")
+    suspend fun deleteItems(
+        @Header("Authorization") token: String?,
+        @Path("checklistId") checklistId: String?,
+        @Path("itemId") itemId: String?
+    ): Response
+
+    @Headers("Accept: application/json")
+    @PUT("checklist/{checklistId}/item/{itemId}")
+    suspend fun updateItems(
+        @Header("Authorization") token: String?,
+        @Path("checklistId") checklistId: String?,
+        @Path("itemId") itemId: String?
+    ): Response
+
+    @Headers("Accept: application/json")
+    @PUT("checklist/{checklistId}/item/rename/{itemId}")
+    suspend fun renameItems(
+        @Header("Authorization") token: String?,
+        @Path("checklistId") checklistId: String?,
+        @Path("itemId") itemId: String?,
+        @Body body: ItemBody
     ): Response
 }

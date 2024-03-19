@@ -3,8 +3,10 @@ package com.wildantechnoart.frontendcodingtes.view
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.MenuItem
+import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.PopupMenu
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -12,7 +14,8 @@ import com.wildantechnoart.frontendcodingtes.R
 import com.wildantechnoart.frontendcodingtes.databinding.ItemChecklistBinding
 import com.wildantechnoart.frontendcodingtes.model.ChecklistData
 
-class ChecklistAdapter : ListAdapter<ChecklistData, ChecklistAdapter.Holder>(MyDiffCallback()) {
+class ChecklistAdapter(private val view: View) :
+    ListAdapter<ChecklistData, ChecklistAdapter.Holder>(MyDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val binding =
@@ -29,6 +32,12 @@ class ChecklistAdapter : ListAdapter<ChecklistData, ChecklistAdapter.Holder>(MyD
 
             textName.text = data.name ?: "-"
             checkItem.isChecked = isComplete
+            cardItem.setOnClickListener {
+                val action = ChecklistFragmentDirections.actionChecklistFragmentToItemsFragment(
+                    checklistId = data.id.toString()
+                )
+                Navigation.findNavController(view).navigate(action)
+            }
             btnMenus.setOnClickListener {
                 val popupMenu = PopupMenu(it.context, it)
                 popupMenu.setOnMenuItemClickListener(object :

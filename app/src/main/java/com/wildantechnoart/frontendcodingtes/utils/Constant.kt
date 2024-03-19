@@ -37,7 +37,7 @@ object Constant {
                             it.response()?.errorBody()?.charStream(),
                             Response::class.java
                         )
-                        val message = response?.message.toString()
+                        val message = response?.errorMessage.toString()
                         Toast.makeText(
                             context,
                             message,

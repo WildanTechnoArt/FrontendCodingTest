@@ -18,6 +18,13 @@
             app:exitAnim="@android:anim/slide_out_right"
             app:popEnterAnim="@android:anim/slide_in_left"
             app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_checklistFragment_to_itemsFragment"
+            app:destination="@id/itemsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
 
     <fragment
@@ -25,5 +32,40 @@
         android:name="com.wildantechnoart.frontendcodingtes.view.AddFragment"
         android:label="@string/label_fragment_add"
         tools:layout="@layout/fragment_add" >
+    </fragment>
+    <fragment
+        android:id="@+id/itemsFragment"
+        android:name="com.wildantechnoart.frontendcodingtes.view.ItemsFragment"
+        android:label="@string/label_fragment_items"
+        tools:layout="@layout/fragment_items" >
+        <argument
+            android:name="checklistId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_itemsFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="com.wildantechnoart.frontendcodingtes.view.AddItemFragment"
+        android:label="@string/label_fragment_add_item"
+        tools:layout="@layout/fragment_add_item" >
+        <argument
+            android:name="isEdit"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="checklistId"
+            app:argType="string" />
+        <argument
+            android:name="itemId"
+            app:argType="string" />
+        <argument
+            android:name="itemName"
+            app:argType="string" />
     </fragment>
 </navigation>

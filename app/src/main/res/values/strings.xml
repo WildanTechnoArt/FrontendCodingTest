@@ -21,11 +21,17 @@
     <string name="message_if_data_empty">There cannot be empty data</string>
     <string name="message_if_email_invalid">Email invalid</string>
     <string name="action_delete">Delete</string>
-    <string name="action_add">Add Item</string>
-    <string name="hint_write">Tulis Nama Item</string>
+    <string name="action_add_checklist">Add Checklist</string>
+    <string name="action_add_item">Add Item</string>
+    <string name="hint_input_checklist">Checklist Name</string>
+    <string name="hint_input_item">Item Name</string>
     <string name="label_fragment_add">Create Checklist</string>
     <string name="menu_logout">Logout</string>
     <string name="menu_delete">Delete</string>
     <string name="label_total_item">Total Item: 0</string>
     <string name="menu">menu</string>
+    <string name="label_fragment_items">List Items</string>
+    <string name="menu_edit">Edit</string>
+    <string name="action_edit_item">Edit Item</string>
+    <string name="label_fragment_add_item">Add/Edit Item</string>
 </resources>

@@ -83,7 +83,7 @@ class AddFragment : Fragment() {
                     }
                 } else {
                     this@with?.btnAddItem?.isClickable = true
-                    this@with?.btnAddItem?.hideProgress(R.string.action_add)
+                    this@with?.btnAddItem?.hideProgress(R.string.action_add_checklist)
                 }
             }
         }

@@ -12,6 +12,5 @@ data class ChecklistResponse(
 data class ChecklistData(
     @SerializedName("id") var id: Int? = null,
     @SerializedName("name") var name: String? = null,
-    @SerializedName("items") var items: String? = null,
     @SerializedName("checklistCompletionStatus") var checklistCompletionStatus: Boolean? = null
 )
