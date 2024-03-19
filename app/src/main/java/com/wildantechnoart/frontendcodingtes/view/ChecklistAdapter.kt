@@ -2,10 +2,13 @@ package com.wildantechnoart.frontendcodingtes.view
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.ViewGroup
+import androidx.appcompat.widget.PopupMenu
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.wildantechnoart.frontendcodingtes.R
 import com.wildantechnoart.frontendcodingtes.databinding.ItemChecklistBinding
 import com.wildantechnoart.frontendcodingtes.model.ItemData
 
@@ -20,13 +23,29 @@ class ChecklistAdapter : ListAdapter<ItemData, ChecklistAdapter.Holder>(MyDiffCa
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: Holder, position: Int) {
         val data = getItem(position)
+        val context = holder.itemView.context
 
         with(holder.binding) {
             textName.text = data.name ?: "-"
-            textItem.text = data.items ?: "Nothing Message"
-            textCheckStatus.text = if(data.checklistCompletionStatus == true) "Finish" else "Not finished yet"
-            btnDelete.setOnClickListener {
-                onClick?.invoke(data)
+            textItem.text = data.items ?: context.getString(R.string.label_total_item)
+            checkItem.isChecked = data.checklistCompletionStatus ?: false
+            btnMenus.setOnClickListener {
+                val popupMenu = PopupMenu(it.context, it)
+                popupMenu.setOnMenuItemClickListener(object :
+                    android.widget.PopupMenu.OnMenuItemClickListener,
+                    PopupMenu.OnMenuItemClickListener {
+                    override fun onMenuItemClick(p0: MenuItem?): Boolean {
+                        when (p0?.itemId) {
+                            R.id.menu_delete -> {
+                                onClick?.invoke(data)
+                            }
+                        }
+                        return true
+                    }
+                })
+
+                popupMenu.inflate(R.menu.menu_checklist)
+                popupMenu.show()
             }
         }
     }

@@ -3,6 +3,7 @@ package com.wildantechnoart.frontendcodingtes.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
@@ -25,17 +26,19 @@ class AuthActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
+
         lifecycleScope.launch {
             val token =
                 MyApp.getInstance().readStringDataStore(this@AuthActivity, Constant.TOKEN_KEY_ACCESS)
             if(token != null){
                 startActivity(Intent(this@AuthActivity, MainActivity::class.java))
                 finish()
+            }else{
+                binding.root.visibility = View.VISIBLE
             }
         }
-
-        setContentView(binding.root)
-        setSupportActionBar(binding.toolbar)
 
         val navController = getNavController()
         navController?.let { controller ->

@@ -24,4 +24,8 @@
     <string name="action_add">Add Item</string>
     <string name="hint_write">Tulis Nama Item</string>
     <string name="label_fragment_add">Create Checklist</string>
+    <string name="menu_logout">Logout</string>
+    <string name="menu_delete">Delete</string>
+    <string name="label_total_item">Total Item: 0</string>
+    <string name="menu">menu</string>
 </resources>
